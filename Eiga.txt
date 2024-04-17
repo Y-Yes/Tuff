@@ -1,0 +1,19 @@
+1. Koks projektas?
+2. Kokia funkcijà atlieka projektas? Kokia jo nauda?
+3. PC/mobile? Jei mobile - android/iOS?
+4. Kokios technologijos bus reikalingos projektui?
+	4.1. Kokia kalba/framework bus naudojama projektui?
+	4.2. Ar bus naudojama duomenø bazë?
+	4.3. Koks IDE labiausiai tinka pasirinktai kalbai? (pvz: C++ bus codeblocks, C# bus visual studio, Java bus IntelliJ, Javascript - VS code ir tt.)
+5. Kokia darbo eiga? Koks darbo planas? Pvz:
+	5.1. Kiekvienam iðmokti naudotis GIT ir pushint kodà á github
+	5.2. Pasiskirstyti kas darys kokià sistemos funkcijà
+	5.3. Iðmokti kurti programas per kelis failus. Pvz su C++:
+		5.3.1. C++ main.cpp faile esanti main() funkcija kreipiasi á funkcijà esanèià projektoFunkcija1.cpp faile
+		5.3.2. Geriausia bûtø neliesti main.cpp failo ir kiekvienam pasiskirstyti po atskirà failà á kurá pushins GIT'e (main funkcija tiesiog 
+		kreipiasi á jûsø failø funkcijas)
+	5.4. Pradëti projektà. Kaip ir su console'inëmis programomis pradþioj svarbu pasileisti teisingai subuildintà 
+	programà (net jei ji ir nieko pradþioj nedaro) ir po truputá pridedinëti features. Jei tai yra windows aplikacija, tai svarbu pradþioj subuildinus 
+	kodà turëti tuðèià windows langà. Jei tai þaidimas - turëti tuðèià game environment. Jei mobili aplikacija - paleistà app'sà su tuðèiu ekranu. Ir tt.
+	5.5. Po pirmo sëkmingo subuildinimo pradëti implementuoti features. Kokie pirmi features bus implementuoti? Nuo ko bus pradëta?
+	5.6. Kiek numatoma minimaliai turëti features projekte, kad jis jums bûtø patenkinamas?
