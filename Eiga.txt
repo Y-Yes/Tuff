@@ -1,19 +1,19 @@
 1. Koks projektas?
-2. Kokia funkcijà atlieka projektas? Kokia jo nauda?
+2. Kokia funkcijÄ… atlieka projektas? Kokia jo nauda?
 3. PC/mobile? Jei mobile - android/iOS?
 4. Kokios technologijos bus reikalingos projektui?
 	4.1. Kokia kalba/framework bus naudojama projektui?
-	4.2. Ar bus naudojama duomenø bazë?
+	4.2. Ar bus naudojama duomenÅ³ bazÄ—?
 	4.3. Koks IDE labiausiai tinka pasirinktai kalbai? (pvz: C++ bus codeblocks, C# bus visual studio, Java bus IntelliJ, Javascript - VS code ir tt.)
 5. Kokia darbo eiga? Koks darbo planas? Pvz:
-	5.1. Kiekvienam iğmokti naudotis GIT ir pushint kodà á github
-	5.2. Pasiskirstyti kas darys kokià sistemos funkcijà
-	5.3. Iğmokti kurti programas per kelis failus. Pvz su C++:
-		5.3.1. C++ main.cpp faile esanti main() funkcija kreipiasi á funkcijà esanèià projektoFunkcija1.cpp faile
-		5.3.2. Geriausia bûtø neliesti main.cpp failo ir kiekvienam pasiskirstyti po atskirà failà á kurá pushins GIT'e (main funkcija tiesiog 
-		kreipiasi á jûsø failø funkcijas)
-	5.4. Pradëti projektà. Kaip ir su console'inëmis programomis pradşioj svarbu pasileisti teisingai subuildintà 
-	programà (net jei ji ir nieko pradşioj nedaro) ir po truputá pridedinëti features. Jei tai yra windows aplikacija, tai svarbu pradşioj subuildinus 
-	kodà turëti tuğèià windows langà. Jei tai şaidimas - turëti tuğèià game environment. Jei mobili aplikacija - paleistà app'sà su tuğèiu ekranu. Ir tt.
-	5.5. Po pirmo sëkmingo subuildinimo pradëti implementuoti features. Kokie pirmi features bus implementuoti? Nuo ko bus pradëta?
-	5.6. Kiek numatoma minimaliai turëti features projekte, kad jis jums bûtø patenkinamas?
+	5.1. Kiekvienam iÅ¡mokti naudotis GIT ir pushint kodÄ… Ä¯ github
+	5.2. Pasiskirstyti kas darys kokiÄ… sistemos funkcijÄ…
+	5.3. IÅ¡mokti kurti programas per kelis failus. Pvz su C++:
+		5.3.1. C++ main.cpp faile esanti main() funkcija kreipiasi Ä¯ funkcijÄ… esanÄiÄ… projektoFunkcija1.cpp faile
+		5.3.2. Geriausia bÅ«tÅ³ neliesti main.cpp failo ir kiekvienam pasiskirstyti po atskirÄ… failÄ… Ä¯ kurÄ¯ pushins GIT'e (main funkcija tiesiog 
+		kreipiasi Ä¯ jÅ«sÅ³ failÅ³ funkcijas)
+	5.4. PradÄ—ti projektÄ…. Kaip ir su console'inÄ—mis programomis pradÅ¾ioj svarbu pasileisti teisingai subuildintÄ… 
+	programÄ… (net jei ji ir nieko pradÅ¾ioj nedaro) ir po truputÄ¯ pridedinÄ—ti features. Jei tai yra windows aplikacija, tai svarbu pradÅ¾ioj subuildinus 
+	kodÄ… turÄ—ti tuÅ¡ÄiÄ… windows langÄ…. Jei tai Å¾aidimas - turÄ—ti tuÅ¡ÄiÄ… game environment. Jei mobili aplikacija - paleistÄ… app'sÄ… su tuÅ¡Äiu ekranu. Ir tt.
+	5.5. Po pirmo sÄ—kmingo subuildinimo pradÄ—ti implementuoti features. Kokie pirmi features bus implementuoti? Nuo ko bus pradÄ—ta?
+	5.6. Kiek numatoma minimaliai turÄ—ti features projekte, kad jis jums bÅ«tÅ³ patenkinamas?
