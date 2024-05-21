@@ -1,16 +1,9 @@
-﻿namespace WinFormsApp1
+namespace WinFormsApp1
 {
     partial class Form1
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,72 +15,72 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            checkBox1 = new CheckBox();
-            SuspendLayout();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonPlay = new System.Windows.Forms.Button();
+            this.checkBoxTerms = new System.Windows.Forms.CheckBox();
+            this.SuspendLayout();
+            
             // 
-            // button1
+            // buttonExit
             // 
-            button1.BackColor = Color.Red;
-            button1.Location = new Point(511, 298);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "Exit";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            this.buttonExit.BackColor = System.Drawing.Color.Red;
+            this.buttonExit.Location = new System.Drawing.Point(511, 298);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonExit.TabIndex = 0;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
+            
             // 
-            // button2
+            // buttonPlay
             // 
-            button2.BackColor = Color.Lime;
-            button2.Location = new Point(142, 298);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Play";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            this.buttonPlay.BackColor = System.Drawing.Color.Lime;
+            this.buttonPlay.Location = new System.Drawing.Point(142, 298);
+            this.buttonPlay.Name = "buttonPlay";
+            this.buttonPlay.Size = new System.Drawing.Size(75, 23);
+            this.buttonPlay.TabIndex = 1;
+            this.buttonPlay.Text = "Play";
+            this.buttonPlay.UseVisualStyleBackColor = false;
+            this.buttonPlay.Click += new System.EventHandler(this.ButtonPlay_Click);
+            
             // 
-            // checkBox1
+            // checkBoxTerms
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.FromArgb(255, 192, 192);
-            checkBox1.Location = new Point(230, 248);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(302, 19);
-            checkBox1.TabIndex = 3;
-            checkBox1.Text = "Accept the terms and conditions and privacy policy?";
-            checkBox1.UseVisualStyleBackColor = false;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            this.checkBoxTerms.AutoSize = true;
+            this.checkBoxTerms.BackColor = System.Drawing.Color.FromArgb(255, 192, 192);
+            this.checkBoxTerms.Location = new System.Drawing.Point(230, 248);
+            this.checkBoxTerms.Name = "checkBoxTerms";
+            this.checkBoxTerms.Size = new System.Drawing.Size(302, 19);
+            this.checkBoxTerms.TabIndex = 2;
+            this.checkBoxTerms.Text = "Accept the terms and conditions and privacy policy?";
+            this.checkBoxTerms.UseVisualStyleBackColor = false;
+            this.checkBoxTerms.CheckedChanged += new System.EventHandler(this.CheckBoxTerms_CheckedChanged);
+            
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 192, 192);
-            ClientSize = new Size(944, 681);
-            Controls.Add(checkBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            DoubleBuffered = true;
-            Name = "Form1";
-            Text = "Form1";
-            Load += Form1_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(255, 192, 192);
+            this.ClientSize = new System.Drawing.Size(944, 681);
+            this.Controls.Add(this.checkBoxTerms);
+            this.Controls.Add(this.buttonPlay);
+            this.Controls.Add(this.buttonExit);
+            this.DoubleBuffered = true;
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
-
         #endregion
-        private Button button1;
-        private Button button2;
-        private CheckBox checkBox1;
+
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button buttonPlay;
+        private System.Windows.Forms.CheckBox checkBoxTerms;
     }
 }
