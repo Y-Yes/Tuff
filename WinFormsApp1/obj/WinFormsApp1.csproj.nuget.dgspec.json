@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gabijus\\Documents\\Orestas Tamkus 3E\\WinFormsApp1\\gitcode\\WinFormsApp1\\WinFormsApp1.csproj": {}
+    "C:\\Users\\Gabijus\\Source\\Repos\\Tuff\\WinFormsApp1\\WinFormsApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gabijus\\Documents\\Orestas Tamkus 3E\\WinFormsApp1\\gitcode\\WinFormsApp1\\WinFormsApp1.csproj": {
+    "C:\\Users\\Gabijus\\Source\\Repos\\Tuff\\WinFormsApp1\\WinFormsApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gabijus\\Documents\\Orestas Tamkus 3E\\WinFormsApp1\\gitcode\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Gabijus\\Source\\Repos\\Tuff\\WinFormsApp1\\WinFormsApp1.csproj",
         "projectName": "WinFormsApp1",
-        "projectPath": "C:\\Users\\Gabijus\\Documents\\Orestas Tamkus 3E\\WinFormsApp1\\gitcode\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectPath": "C:\\Users\\Gabijus\\Source\\Repos\\Tuff\\WinFormsApp1\\WinFormsApp1.csproj",
         "packagesPath": "C:\\Users\\Gabijus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gabijus\\Documents\\Orestas Tamkus 3E\\WinFormsApp1\\gitcode\\WinFormsApp1\\obj\\",
+        "outputPath": "C:\\Users\\Gabijus\\Source\\Repos\\Tuff\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gabijus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300-preview.24203.14/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
