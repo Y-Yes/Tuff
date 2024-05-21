@@ -11,10 +11,10 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
-            
-                this.Close();
-            
+
+
+            this.Close();
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -24,11 +24,16 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-         if (checkBox1.Checked == true)
+            if (checkBox1.Checked == true)
             {
-                Game GameForm=new Game();
+                Game GameForm = new Game();
                 GameForm.Show();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

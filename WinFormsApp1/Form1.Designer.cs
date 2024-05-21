@@ -58,7 +58,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.BackColor = SystemColors.ActiveCaption;
+            checkBox1.BackColor = Color.FromArgb(255, 192, 192);
             checkBox1.Location = new Point(230, 248);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(302, 19);
@@ -71,7 +71,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkKhaki;
+            BackColor = Color.FromArgb(255, 192, 192);
             ClientSize = new Size(944, 681);
             Controls.Add(checkBox1);
             Controls.Add(button2);
@@ -79,6 +79,7 @@
             DoubleBuffered = true;
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
