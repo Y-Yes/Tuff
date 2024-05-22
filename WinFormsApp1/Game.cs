@@ -15,6 +15,11 @@ namespace WinFormsApp1
         public Game()
         {
             InitializeComponent();
+            this.FormClosing += new FormClosingEventHandler(Game_FormClosing); //On exit close the application
+        }
+        private void Game_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); //Closes the application
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
