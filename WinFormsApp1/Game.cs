@@ -15,13 +15,26 @@ namespace WinFormsApp1
         public Game()
         {
             InitializeComponent();
+            LevelSelector();
             this.FormClosing += new FormClosingEventHandler(Game_FormClosing); //On exit close the application
         }
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit(); //Closes the application
         }
-
+        private void LevelSelector()
+        {
+            pictureBox1.Click += (sender, e) => OpenTree(1);
+            pictureBox2.Click += (sender, e) => OpenTree(2);
+            pictureBox3.Click += (sender, e) => OpenTree(3);
+        }
+        private void OpenTree(int level) //Opens the new window with a tree passing in the selected level
+        {
+            this.Hide();//Hides level selector
+            Level LevelForm = new Level(level);//Open the tree window with level number
+            LevelForm.Show();
+            LevelForm.FormClosed += (s, args) => this.Show(); //Unhides the level selector if you exit the level
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
