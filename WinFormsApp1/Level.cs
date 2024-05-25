@@ -72,7 +72,35 @@ namespace WinFormsApp1
         private void GrowButton_Click(object sender, EventArgs e) //cycles through tree states
         {
             
-            currentTreeState++;
+            if (BigData.Score1 == 4)
+            {
+                currentTreeState++;
+            }
+            if (BigData.Score1 == 9)
+            {
+                currentTreeState++;
+            }
+
+
+            if (BigData.Score2 == 4)
+            {
+                currentTreeState++;
+            }
+            if (BigData.Score2 == 9)
+            {
+                currentTreeState++;
+            }
+
+            if (BigData.Score3 == 4)
+            {
+                currentTreeState++;
+            }
+            if (BigData.Score3 == 9)
+            {
+                currentTreeState++;
+            }
+
+
             if (currentTree == 1)//Updates each levels score in the menu when pressing grow
             {
                 BigData.Score1 += 1;
@@ -88,7 +116,7 @@ namespace WinFormsApp1
             if (currentTreeState > 3) currentTreeState = 1;
             LoadImage();
             InitializeComponent();
-            _soundPlayer = new SoundPlayer("amogus.wav");
+            _soundPlayer = new SoundPlayer("C:\\Users\\Maka\\source\\repos\\Tuff\\WinFormsApp1\\Resources\\amogus.wav"); // JEI NEVEIKIA TRINKIT 119 ir 120 EILUTES NAHUI!!!!! BIG WARNIGN BIG WARNING BIG WARNIGN
             _soundPlayer.Play();
         }
     }
