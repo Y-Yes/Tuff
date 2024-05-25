@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using System.Media;
+using System.Security.Cryptography.X509Certificates;
 
 namespace WinFormsApp1
 {
@@ -15,6 +17,7 @@ namespace WinFormsApp1
     {
         private int currentTree;
         private int currentTreeState;
+        private SoundPlayer _soundPlayer;
         private Dictionary<(int, int), Image> treeImages; //God that links the images to numbers
         public Level(int tree)
         {
@@ -62,13 +65,19 @@ namespace WinFormsApp1
                 Button growButton = new Button { Text = "GrowLeTree", Location = new Point(10, 420) };
                 growButton.Click += GrowButton_Click;
                 this.Controls.Add(growButton);
+                InitializeComponent();
+                _soundPlayer = new SoundPlayer("amogus.wav");
             }
         }
         private void GrowButton_Click(object sender, EventArgs e) //cycles through tree states
         {
+            
             currentTreeState++;
             if (currentTreeState > 3) currentTreeState = 1;
             LoadImage();
+            InitializeComponent();
+            _soundPlayer = new SoundPlayer("amogus.wav");
+            _soundPlayer.Play();
         }
     }
 }
