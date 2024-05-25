@@ -66,7 +66,7 @@ namespace WinFormsApp1
                 growButton.Click += GrowButton_Click;
                 this.Controls.Add(growButton);
                 InitializeComponent();
-                _soundPlayer = new SoundPlayer("amogus.wav");
+                //_soundPlayer = new SoundPlayer("amogus.wav");
             }
         }
         private void GrowButton_Click(object sender, EventArgs e) //cycles through tree states
@@ -116,8 +116,8 @@ namespace WinFormsApp1
             if (currentTreeState > 3) currentTreeState = 1;
             LoadImage();
             InitializeComponent();
-            _soundPlayer = new SoundPlayer("C:\\Users\\Maka\\source\\repos\\Tuff\\WinFormsApp1\\Resources\\amogus.wav"); // JEI NEVEIKIA TRINKIT 119 ir 120 EILUTES NAHUI!!!!! BIG WARNIGN BIG WARNING BIG WARNIGN
-            _soundPlayer.Play();
+            //_soundPlayer = new SoundPlayer("C:\\Users\\Maka\\source\\repos\\Tuff\\WinFormsApp1\\Resources\\amogus.wav"); // JEI NEVEIKIA TRINKIT 119 ir 120 EILUTES NAHUI!!!!! BIG WARNIGN BIG WARNING BIG WARNIGN
+            //_soundPlayer.Play();
         }
     }
 }
