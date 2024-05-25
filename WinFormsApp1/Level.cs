@@ -67,6 +67,18 @@ namespace WinFormsApp1
         private void GrowButton_Click(object sender, EventArgs e) //cycles through tree states
         {
             currentTreeState++;
+            if (currentTree == 1)//Updates each levels score in the menu when pressing grow
+            {
+                BigData.Score1 += 1;
+            }
+            if (currentTree == 2)
+            {
+                BigData.Score2 += 1;
+            }
+            if (currentTree == 3)
+            {
+                BigData.Score3 += 1;
+            }
             if (currentTreeState > 3) currentTreeState = 1;
             LoadImage();
         }
