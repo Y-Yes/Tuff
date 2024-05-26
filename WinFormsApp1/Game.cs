@@ -18,12 +18,17 @@ namespace WinFormsApp1
             LevelSelector();
             this.FormClosing += new FormClosingEventHandler(Game_FormClosing); //On exit close the application
             this.Activated += new EventHandler(UpdateScore); //runs score update when unhiding the menu
+    
         }
-
+        private void buttonExitGame_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit(); //Closes the application
         }
+
 
         private void LevelSelector()
         {

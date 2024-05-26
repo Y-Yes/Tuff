@@ -37,6 +37,7 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
+            buttonExitGame = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -142,12 +143,28 @@
             label6.TabIndex = 8;
             label6.Text = "Score: 0";
             // 
+            // buttonExit
+            // 
+            buttonExitGame = new Button();
+            buttonExitGame.Click += new EventHandler(buttonExitGame_Click);
+            buttonExitGame.BackColor = Color.FromArgb(220, 53, 69);
+            buttonExitGame.FlatStyle = FlatStyle.Flat;
+            buttonExitGame.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            buttonExitGame.ForeColor = Color.White;
+            buttonExitGame.Location = new Point(12, 619);
+            buttonExitGame.Name = "buttonExitGame";
+            buttonExitGame.Size = new Size(100, 50);
+            buttonExitGame.TabIndex = 9;
+            buttonExitGame.Text = "Exit Game";
+            buttonExitGame.UseVisualStyleBackColor = false;
+            // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Green;
             ClientSize = new Size(1264, 681);
+            Controls.Add(buttonExitGame);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -178,5 +195,6 @@
         private Label label4;
         private Label label5;
         private Label label6;
+        private Button buttonExitGame;
     }
 }
