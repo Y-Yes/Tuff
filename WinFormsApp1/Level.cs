@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Media;
 using System.Security.Cryptography.X509Certificates;
+using System.IO;
+using System.Diagnostics;
 
 namespace WinFormsApp1
 {
@@ -114,10 +116,24 @@ namespace WinFormsApp1
                 BigData.Score3 += 1;
             }
             if (currentTreeState > 3) currentTreeState = 1;
+
+            string programPath = @"C:\Users\Maka\source\repos\Tuff\TypingGame\TypingGame\bin\Release\net5.0-windows\publish\TypingGame.exe";
+
+            try
+            {
+                // Start the program
+                Process.Start(programPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while trying to open the program: {ex.Message}");
+            }
+
             LoadImage();
             InitializeComponent();
             //_soundPlayer = new SoundPlayer("C:\\Users\\Maka\\source\\repos\\Tuff\\WinFormsApp1\\Resources\\amogus.wav"); // JEI NEVEIKIA TRINKIT 119 ir 120 EILUTES NAHUI!!!!! BIG WARNIGN BIG WARNING BIG WARNIGN
             //_soundPlayer.Play();
         }
     }
+
 }
