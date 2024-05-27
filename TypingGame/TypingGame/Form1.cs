@@ -11,19 +11,47 @@ namespace TypingGame
         private int score;
         private readonly Random random = new Random();
         private readonly char[] letters = { 'a', 's', 'd', 'f', 'j', 'k', 'l', ';' };
-
+        private Timer timer;
+        private int timeLeft;
+        
         public Form1()
         {
             InitializeComponent();
             this.KeyPreview = true; // To capture key presses
             this.KeyPress += new KeyPressEventHandler(Form1_KeyPress);
+            InitializeTimer();
             GenerateRandomLetter();
+        }
+
+        private void InitializeTimer()
+        {
+            timer = new Timer();
+            timer.Interval = 1000; // 1 second
+            timer.Tick += new EventHandler(Timer_Tick);
+            timeLeft = 1;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (timeLeft > 0)
+            {
+                timeLeft--;
+            }
+            else
+            {
+                timer.Stop();
+                score--;
+                scoreLabel.Text = $"Score: {score}";
+                GenerateRandomLetter();
+            }
         }
 
         private void GenerateRandomLetter()
         {
             currentLetter = letters[random.Next(letters.Length)];
             UpdatePictureBox();
+            timeLeft = 1;
+            timer.Start();
         }
 
         private void UpdatePictureBox()
