@@ -11,5 +11,8 @@ namespace WinFormsApp1
         public static int Score1 { get; set; }
         public static int Score2 { get; set; }
         public static int Score3 { get; set; }
+        public static int Score4 { get; set; }
+        public static int Score5 { get; set; }
+        public static int Score6 { get; set; }
     }
 }

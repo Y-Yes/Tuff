@@ -41,7 +41,16 @@ namespace WinFormsApp1
                 {(2, 3), Properties.Resources.Bamboo_3r},
                 {(3, 1), Properties.Resources.Sakura_1r},
                 {(3, 2), Properties.Resources.Sakura_2r},
-                {(3, 3), Properties.Resources.Sakura_3r}
+                {(3, 3), Properties.Resources.Sakura_3r},
+                {(4, 1), Properties.Resources.Medis_krc_1r},
+                {(4, 2), Properties.Resources.Medis_krc_2r},
+                {(4, 3), Properties.Resources.Medis_krc_3r},
+                {(5, 1), Properties.Resources.Palme_1r},
+                {(5, 2), Properties.Resources.Palme_2r},
+                {(5, 3), Properties.Resources.Palme_3r},
+                {(6, 1), Properties.Resources.Pusis_1r},
+                {(6, 2), Properties.Resources.Pusis_2r},
+                {(6, 3), Properties.Resources.Pusis_3r}
             };
             LoadImage();
             LoadTypingGame();
@@ -190,6 +199,18 @@ namespace WinFormsApp1
             if (currentTree == 3)
             {
                 BigData.Score3 = score;
+            }
+            if (currentTree == 4) //Updates each levels score in the menu when pressing grow
+            {
+                BigData.Score4 = score;
+            }
+            if (currentTree == 5)
+            {
+                BigData.Score5 = score;
+            }
+            if (currentTree == 6)
+            {
+                BigData.Score6 = score;
             }
 
 

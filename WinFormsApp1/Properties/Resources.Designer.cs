@@ -183,6 +183,36 @@ namespace WinFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Medis_krc_1r {
+            get {
+                object obj = ResourceManager.GetObject("Medis krc 1r", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Medis_krc_2r {
+            get {
+                object obj = ResourceManager.GetObject("Medis krc 2r", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Medis_krc_3r {
+            get {
+                object obj = ResourceManager.GetObject("Medis krc 3r", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Normal_1r {
             get {
                 object obj = ResourceManager.GetObject("Normal 1r", resourceCulture);
@@ -206,6 +236,66 @@ namespace WinFormsApp1.Properties {
         internal static System.Drawing.Bitmap Normal_3r {
             get {
                 object obj = ResourceManager.GetObject("Normal 3r", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Palme_1r {
+            get {
+                object obj = ResourceManager.GetObject("Palme 1r", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Palme_2r {
+            get {
+                object obj = ResourceManager.GetObject("Palme 2r", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Palme_3r {
+            get {
+                object obj = ResourceManager.GetObject("Palme 3r", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pusis_1r {
+            get {
+                object obj = ResourceManager.GetObject("Pusis 1r", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pusis_2r {
+            get {
+                object obj = ResourceManager.GetObject("Pusis 2r", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pusis_3r {
+            get {
+                object obj = ResourceManager.GetObject("Pusis 3r", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
