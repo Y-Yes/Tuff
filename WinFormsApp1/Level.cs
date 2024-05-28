@@ -11,9 +11,9 @@ namespace WinFormsApp1
     {
         private int currentTree;
         private int currentTreeState;
-        private Dictionary<(int, int), Image> treeImages; //God that links the images to numbers
+        private Dictionary<(int, int), Image> treeImages; // Dictionary that links the images to numbers
 
-        // stuff for typing game
+        // Stuff for typing game
         private char currentLetter;
         private int score;
         private readonly Random random = new Random();
@@ -22,14 +22,15 @@ namespace WinFormsApp1
         private int timeLeft;
         private PictureBox pictureBox1;
         private Label scoreLabel;
+        private Label timeLabel;
         private Label pauseLabel;
         private bool gamePaused = false;
 
         public Level(int tree)
         {
             InitializeComponent();
-            currentTree = tree; //uses the tree that user selected in the level selector
-            currentTreeState = 1; //selects the first stage of the tree
+            currentTree = tree; // Uses the tree that user selected in the level selector
+            currentTreeState = 1; // Selects the first stage of the tree
 
             treeImages = new Dictionary<(int, int), Image>
             {
@@ -70,19 +71,17 @@ namespace WinFormsApp1
                 // Adds the picturebox to the window
                 this.Controls.Add(treePictureBox);
 
-                // calculates where to place the image based on the picture size to be in the middle
+                // Calculates where to place the image based on the picture size to be in the middle
                 int centerX = ((this.ClientSize.Width - treePictureBox.Width) / 2) + 100;
                 int bottomY = (this.ClientSize.Height - treePictureBox.Height) - 10;
 
-                // changes the location of the image
+                // Changes the location of the image
                 treePictureBox.Location = new Point(centerX, bottomY);
                 this.Controls.Clear();
                 this.Controls.Add(treePictureBox);
                 InitializeComponent();
             }
         }
-
-
 
         private void LoadTypingGame()
         {
@@ -95,18 +94,18 @@ namespace WinFormsApp1
 
         private void InitializeTimer()
         {
-            timer = new System.Windows.Forms.Timer(); 
-            timer.Interval = 1000; // 1 second
+            timer = new System.Windows.Forms.Timer();
+            timer.Interval = 100; // 100 milliseconds
             timer.Tick += new EventHandler(Timer_Tick);
-            timeLeft = 1;
+            timeLeft = 1000; // 1000 milliseconds (1 second)
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-
             if (timeLeft > 0)
             {
-                timeLeft--;
+                timeLeft -= 100;
+                timeLabel.Text = $"Time Left: {timeLeft}ms";
             }
             else
             {
@@ -114,7 +113,6 @@ namespace WinFormsApp1
                 score--;
                 UpdateTreeState();
                 scoreLabel.Text = $"Score: {score}";
-                
                 GenerateRandomLetter();
             }
         }
@@ -123,7 +121,8 @@ namespace WinFormsApp1
         {
             currentLetter = letters[random.Next(letters.Length)];
             UpdatePictureBox();
-            timeLeft = 1;
+            timeLeft = 1000; // Reset time left for each letter
+            timeLabel.Text = $"Time Left: {timeLeft}ms";
             timer.Start();
         }
 
@@ -181,45 +180,29 @@ namespace WinFormsApp1
             if (e.KeyChar == currentLetter)
             {
                 score++;
-
-                
             }
             else
             {
                 score--;
             }
-            if (currentTree == 1) //Updates each levels score in the menu when pressing grow
-            {
-                BigData.Score1 = score;
-            }
-            if (currentTree == 2)
-            {
-                BigData.Score2 = score;
-            }
-            if (currentTree == 3)
-            {
-                BigData.Score3 = score;
-            }
-            if (currentTree == 4) //Updates each levels score in the menu when pressing grow
-            {
-                BigData.Score4 = score;
-            }
-            if (currentTree == 5)
-            {
-                BigData.Score5 = score;
-            }
-            if (currentTree == 6)
-            {
-                BigData.Score6 = score;
-            }
 
+            // Update BigData based on the current tree
+            switch (currentTree)
+            {
+                case 1: BigData.Score1 = score; break;
+                case 2: BigData.Score2 = score; break;
+                case 3: BigData.Score3 = score; break;
+                case 4: BigData.Score4 = score; break;
+                case 5: BigData.Score5 = score; break;
+                case 6: BigData.Score6 = score; break;
+            }
 
             UpdateTreeState();
             scoreLabel.Text = $"Score: {score}";
             GenerateRandomLetter();
-
         }
-        private void UpdateTreeState()// smart tree updating system to get rid of blinking
+
+        private void UpdateTreeState()
         {
             int newTreeState = currentTreeState;
 
@@ -236,7 +219,7 @@ namespace WinFormsApp1
                 newTreeState = 3;
             }
 
-            if (newTreeState != currentTreeState)//Only redraws the entire screen when the tree grows
+            if (newTreeState != currentTreeState)
             {
                 currentTreeState = newTreeState;
                 LoadImage();
@@ -245,36 +228,53 @@ namespace WinFormsApp1
             }
         }
 
-
         private void InitializeTypingGameComponents()
         {
-            pictureBox1 = new PictureBox();
-            pictureBox1.Location = new System.Drawing.Point(12, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(100, 100);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pictureBox1 = new PictureBox
+            {
+                Location = new System.Drawing.Point(12, 12),
+                Name = "pictureBox1",
+                Size = new System.Drawing.Size(100, 100),
+                TabIndex = 0,
+                TabStop = false
+            };
 
-            scoreLabel = new Label();
-            scoreLabel.AutoSize = true;
-            scoreLabel.Location = new System.Drawing.Point(12, 115);
-            scoreLabel.Name = "scoreLabel";
-            scoreLabel.Size = new System.Drawing.Size(47, 13);
-            scoreLabel.TabIndex = 1;
-            scoreLabel.Text = "Score: 0";
-            scoreLabel.Font = new Font("Arial", 24);
+            scoreLabel = new Label
+            {
+                AutoSize = true,
+                Location = new System.Drawing.Point(12, 115),
+                Name = "scoreLabel",
+                Size = new System.Drawing.Size(47, 13),
+                TabIndex = 1,
+                Text = "Score: 0",
+                Font = new Font("Arial", 24)
+            };
 
-            // pausing information
-            pauseLabel = new Label();
-            pauseLabel.AutoSize = true;
-            pauseLabel.Location = new System.Drawing.Point(12, 160);
-            pauseLabel.Name = "pauseInformation";
-            pauseLabel.Size = new System.Drawing.Size(47, 13);
-            pauseLabel.TabIndex = 1;
-            pauseLabel.Text = "pause the game by pressing 'e' ";
-            // loads the thingies
+            timeLabel = new Label
+            {
+                AutoSize = true,
+                Location = new System.Drawing.Point(12, 150),
+                Name = "timeLabel",
+                Size = new System.Drawing.Size(120, 13),
+                TabIndex = 2,
+                Text = "Time Left: 1000ms",
+                Font = new Font("Arial", 16)
+            };
+
+            pauseLabel = new Label
+            {
+                AutoSize = true,
+                Location = new System.Drawing.Point(12, 190),
+                Name = "pauseLabel",
+                Size = new System.Drawing.Size(200, 13),
+                TabIndex = 3,
+                Text = "Pause the game by pressing 'e'",
+                Font = new Font("Arial", 12)
+            };
+
             this.Controls.Add(pictureBox1);
             this.Controls.Add(scoreLabel);
+            this.Controls.Add(timeLabel);
             this.Controls.Add(pauseLabel);
         }
     }

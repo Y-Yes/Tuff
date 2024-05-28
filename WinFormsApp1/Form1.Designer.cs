@@ -19,18 +19,17 @@ namespace WinFormsApp1
         {
             buttonExit = new Button();
             checkBoxTerms = new CheckBox();
-            pictureBox2 = new PictureBox();
             buttonPlay = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // buttonExit
             // 
+            buttonExit.Anchor = AnchorStyles.None;
             buttonExit.BackColor = Color.FromArgb(220, 53, 69);
             buttonExit.FlatStyle = FlatStyle.Flat;
             buttonExit.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonExit.ForeColor = Color.White;
-            buttonExit.Location = new Point(390, 375);
+            buttonExit.Location = new Point(552, 443);
             buttonExit.Name = "buttonExit";
             buttonExit.Size = new Size(100, 34);
             buttonExit.TabIndex = 0;
@@ -40,11 +39,12 @@ namespace WinFormsApp1
             // 
             // checkBoxTerms
             // 
+            checkBoxTerms.Anchor = AnchorStyles.None;
             checkBoxTerms.AutoSize = true;
             checkBoxTerms.BackColor = Color.OliveDrab;
             checkBoxTerms.Font = new Font("Segoe UI", 10F);
             checkBoxTerms.ForeColor = Color.White;
-            checkBoxTerms.Location = new Point(219, 415);
+            checkBoxTerms.Location = new Point(336, 502);
             checkBoxTerms.Name = "checkBoxTerms";
             checkBoxTerms.Size = new Size(348, 23);
             checkBoxTerms.TabIndex = 2;
@@ -52,23 +52,14 @@ namespace WinFormsApp1
             checkBoxTerms.UseVisualStyleBackColor = false;
             checkBoxTerms.CheckedChanged += checkBoxTerms_CheckedChanged;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.tuff;
-            pictureBox2.Location = new Point(-2, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(803, 449);
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
-            // 
             // buttonPlay
             // 
+            buttonPlay.Anchor = AnchorStyles.None;
             buttonPlay.BackColor = Color.FromArgb(40, 167, 69);
             buttonPlay.FlatStyle = FlatStyle.Flat;
             buttonPlay.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonPlay.ForeColor = Color.White;
-            buttonPlay.Location = new Point(284, 375);
+            buttonPlay.Location = new Point(367, 443);
             buttonPlay.Name = "buttonPlay";
             buttonPlay.Size = new Size(100, 34);
             buttonPlay.TabIndex = 1;
@@ -81,17 +72,16 @@ namespace WinFormsApp1
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
+            BackgroundImage = Properties.Resources._2120C9C9_C624_49E0_A235_EAED7E190102;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(986, 582);
             Controls.Add(checkBoxTerms);
             Controls.Add(buttonPlay);
             Controls.Add(buttonExit);
-            Controls.Add(pictureBox2);
             DoubleBuffered = true;
             Name = "Form1";
             Text = "Game Launcher";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -101,7 +91,6 @@ namespace WinFormsApp1
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.CheckBox checkBoxTerms;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private Button buttonPlay;
     }
 }
