@@ -82,7 +82,7 @@ namespace WinFormsApp1
 
                 // Calculates where to place the image based on the picture size to be in the middle
                 int centerX = ((this.ClientSize.Width - treePictureBox.Width) / 2) + 100;
-                int bottomY = (this.ClientSize.Height - treePictureBox.Height) - 10;
+                int bottomY = (this.ClientSize.Height - treePictureBox.Height) - 5;
 
                 // Changes the location of the image
                 treePictureBox.Location = new Point(centerX, bottomY);
@@ -215,7 +215,7 @@ namespace WinFormsApp1
         {
             int newTreeState = currentTreeState;
 
-            if (score < 8*currentTree)
+            if (score < 8 * currentTree)
             {
                 newTreeState = 1;
             }
@@ -256,7 +256,7 @@ namespace WinFormsApp1
                 Size = new System.Drawing.Size(47, 13),
                 TabIndex = 1,
                 Text = $"Score: {score}",
-            Font = new Font("Arial", 24)
+                Font = new Font("Arial", 24)
             };
 
             timeLabel = new Label
@@ -285,6 +285,11 @@ namespace WinFormsApp1
             this.Controls.Add(scoreLabel);
             this.Controls.Add(timeLabel);
             this.Controls.Add(pauseLabel);
+        }
+
+        private void Level_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
