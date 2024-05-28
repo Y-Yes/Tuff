@@ -62,7 +62,7 @@ namespace WinFormsApp1
                 this.Controls.Add(treePictureBox);
 
                 // calculates where to place the image based on the picture size to be in the middle
-                int centerX = (this.ClientSize.Width - treePictureBox.Width) / 2;
+                int centerX = ((this.ClientSize.Width - treePictureBox.Width) / 2) + 100;
                 int bottomY = (this.ClientSize.Height - treePictureBox.Height) - 50;
 
                 // changes the location of the image
