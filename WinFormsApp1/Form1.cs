@@ -16,21 +16,6 @@ namespace WinFormsApp1
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Specify the path to the program you want to open
-            string programPath = @"C:\Path\To\Your\Program.exe";
-
-            try
-            {
-                // Start the program
-                Process.Start(programPath);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while trying to open the program: {ex.Message}");
-            }
-        }
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
