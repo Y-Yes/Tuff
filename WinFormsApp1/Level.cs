@@ -53,6 +53,15 @@ namespace WinFormsApp1
                 {(6, 2), Properties.Resources.Pusis_2r},
                 {(6, 3), Properties.Resources.Pusis_3r}
             };
+            switch (currentTree)
+            {
+                case 1: score = BigData.Score1; break;
+                case 2: score = BigData.Score2; break;
+                case 3: score = BigData.Score3; break;
+                case 4: score = BigData.Score4; break;
+                case 5: score = BigData.Score5; break;
+                case 6: score = BigData.Score6; break;
+            }
             LoadImage();
             LoadTypingGame();
         }
@@ -206,15 +215,15 @@ namespace WinFormsApp1
         {
             int newTreeState = currentTreeState;
 
-            if (score < 4)
+            if (score < 8*currentTree)
             {
                 newTreeState = 1;
             }
-            else if (score >= 4 && score < 9)
+            else if (score >= 8 * currentTree && score < 18 * currentTree)
             {
                 newTreeState = 2;
             }
-            else if (score >= 9)
+            else if (score >= 18 * currentTree)
             {
                 newTreeState = 3;
             }
@@ -246,8 +255,8 @@ namespace WinFormsApp1
                 Name = "scoreLabel",
                 Size = new System.Drawing.Size(47, 13),
                 TabIndex = 1,
-                Text = "Score: 0",
-                Font = new Font("Arial", 24)
+                Text = $"Score: {score}",
+            Font = new Font("Arial", 24)
             };
 
             timeLabel = new Label
