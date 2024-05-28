@@ -63,7 +63,7 @@ namespace WinFormsApp1
 
                 // calculates where to place the image based on the picture size to be in the middle
                 int centerX = ((this.ClientSize.Width - treePictureBox.Width) / 2) + 100;
-                int bottomY = (this.ClientSize.Height - treePictureBox.Height) - 50;
+                int bottomY = (this.ClientSize.Height - treePictureBox.Height) - 10;
 
                 // changes the location of the image
                 treePictureBox.Location = new Point(centerX, bottomY);
@@ -103,7 +103,9 @@ namespace WinFormsApp1
             {
                 timer.Stop();
                 score--;
+                UpdateTreeState();
                 scoreLabel.Text = $"Score: {score}";
+                
                 GenerateRandomLetter();
             }
         }
@@ -191,9 +193,8 @@ namespace WinFormsApp1
             }
 
 
-            
-            scoreLabel.Text = $"Score: {score}";
             UpdateTreeState();
+            scoreLabel.Text = $"Score: {score}";
             GenerateRandomLetter();
 
         }
