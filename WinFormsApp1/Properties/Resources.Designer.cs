@@ -63,6 +63,16 @@ namespace WinFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2120C9C9_C624_49E0_A235_EAED7E190102 {
+            get {
+                object obj = ResourceManager.GetObject("2120C9C9-C624-49E0-A235-EAED7E190102", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bamboo_1r {
             get {
                 object obj = ResourceManager.GetObject("Bamboo 1r", resourceCulture);
@@ -186,6 +196,16 @@ namespace WinFormsApp1.Properties {
         internal static System.Drawing.Bitmap tree11 {
             get {
                 object obj = ResourceManager.GetObject("tree11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tuff {
+            get {
+                object obj = ResourceManager.GetObject("tuff", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

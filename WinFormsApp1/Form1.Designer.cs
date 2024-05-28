@@ -18,11 +18,10 @@ namespace WinFormsApp1
         private void InitializeComponent()
         {
             buttonExit = new Button();
-            buttonPlay = new Button();
             checkBoxTerms = new CheckBox();
-            labelTitle = new Label();
-            panelMain = new Panel();
-            panelMain.SuspendLayout();
+            pictureBox2 = new PictureBox();
+            buttonPlay = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // buttonExit
@@ -31,13 +30,37 @@ namespace WinFormsApp1
             buttonExit.FlatStyle = FlatStyle.Flat;
             buttonExit.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonExit.ForeColor = Color.White;
-            buttonExit.Location = new Point(122, 250);
+            buttonExit.Location = new Point(390, 375);
             buttonExit.Name = "buttonExit";
-            buttonExit.Size = new Size(100, 50);
+            buttonExit.Size = new Size(100, 34);
             buttonExit.TabIndex = 0;
             buttonExit.Text = "Exit";
             buttonExit.UseVisualStyleBackColor = false;
             buttonExit.Click += buttonExit_Click;
+            // 
+            // checkBoxTerms
+            // 
+            checkBoxTerms.AutoSize = true;
+            checkBoxTerms.BackColor = Color.OliveDrab;
+            checkBoxTerms.Font = new Font("Segoe UI", 10F);
+            checkBoxTerms.ForeColor = Color.White;
+            checkBoxTerms.Location = new Point(219, 415);
+            checkBoxTerms.Name = "checkBoxTerms";
+            checkBoxTerms.Size = new Size(348, 23);
+            checkBoxTerms.TabIndex = 2;
+            checkBoxTerms.Text = "I accept the terms and conditions and privacy policy.";
+            checkBoxTerms.UseVisualStyleBackColor = false;
+            checkBoxTerms.CheckedChanged += checkBoxTerms_CheckedChanged;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.tuff;
+            pictureBox2.Location = new Point(-2, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(803, 449);
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // buttonPlay
             // 
@@ -45,50 +68,13 @@ namespace WinFormsApp1
             buttonPlay.FlatStyle = FlatStyle.Flat;
             buttonPlay.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             buttonPlay.ForeColor = Color.White;
-            buttonPlay.Location = new Point(481, 250);
+            buttonPlay.Location = new Point(284, 375);
             buttonPlay.Name = "buttonPlay";
-            buttonPlay.Size = new Size(100, 50);
+            buttonPlay.Size = new Size(100, 34);
             buttonPlay.TabIndex = 1;
             buttonPlay.Text = "Play";
             buttonPlay.UseVisualStyleBackColor = false;
             buttonPlay.Click += buttonPlay_Click;
-            // 
-            // checkBoxTerms
-            // 
-            checkBoxTerms.AutoSize = true;
-            checkBoxTerms.Font = new Font("Segoe UI", 10F);
-            checkBoxTerms.ForeColor = Color.White;
-            checkBoxTerms.Location = new Point(200, 200);
-            checkBoxTerms.Name = "checkBoxTerms";
-            checkBoxTerms.Size = new Size(348, 23);
-            checkBoxTerms.TabIndex = 2;
-            checkBoxTerms.Text = "I accept the terms and conditions and privacy policy.";
-            checkBoxTerms.UseVisualStyleBackColor = true;
-            checkBoxTerms.CheckedChanged += checkBoxTerms_CheckedChanged;
-            // 
-            // labelTitle
-            // 
-            labelTitle.AutoSize = true;
-            labelTitle.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
-            labelTitle.ForeColor = Color.White;
-            labelTitle.Location = new Point(213, 75);
-            labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(278, 45);
-            labelTitle.TabIndex = 3;
-            labelTitle.Text = "Welcome to Tuff!";
-            // 
-            // panelMain
-            // 
-            panelMain.BackColor = Color.FromArgb(30, 30, 30);
-            panelMain.BorderStyle = BorderStyle.FixedSingle;
-            panelMain.Controls.Add(labelTitle);
-            panelMain.Controls.Add(checkBoxTerms);
-            panelMain.Controls.Add(buttonPlay);
-            panelMain.Controls.Add(buttonExit);
-            panelMain.Location = new Point(50, 50);
-            panelMain.Name = "panelMain";
-            panelMain.Size = new Size(700, 350);
-            panelMain.TabIndex = 4;
             // 
             // Form1
             // 
@@ -97,22 +83,25 @@ namespace WinFormsApp1
             BackColor = Color.Black;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
-            Controls.Add(panelMain);
+            Controls.Add(checkBoxTerms);
+            Controls.Add(buttonPlay);
+            Controls.Add(buttonExit);
+            Controls.Add(pictureBox2);
             DoubleBuffered = true;
             Name = "Form1";
             Text = "Game Launcher";
             Load += Form1_Load;
-            panelMain.ResumeLayout(false);
-            panelMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.Button buttonPlay;
         private System.Windows.Forms.CheckBox checkBoxTerms;
-        private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.Panel panelMain;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private Button buttonPlay;
     }
 }

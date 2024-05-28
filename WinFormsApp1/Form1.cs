@@ -55,6 +55,11 @@ namespace WinFormsApp1
         {
             // Initialization logic when the form loads can be added here
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
