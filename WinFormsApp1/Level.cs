@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -15,12 +15,14 @@ namespace WinFormsApp1
 
         // Stuff for typing game
         private char currentLetter;
+        private char nextLetter; // New field to store the next letter
         private int score;
         private readonly Random random = new Random();
         private readonly char[] letters = { 'a', 's', 'd', 'f', 'j', 'k', 'l', ';' };
         private System.Windows.Forms.Timer timer;
         private int timeLeft;
         private PictureBox pictureBox1;
+        private PictureBox nextLetterPictureBox; // New PictureBox for displaying the next letter
         private Label scoreLabel;
         private Label timeLabel;
         private Label pauseLabel;
@@ -53,15 +55,6 @@ namespace WinFormsApp1
                 {(6, 2), Properties.Resources.Pusis_2r},
                 {(6, 3), Properties.Resources.Pusis_3r}
             };
-            switch (currentTree)
-            {
-                case 1: score = BigData.Score1; break;
-                case 2: score = BigData.Score2; break;
-                case 3: score = BigData.Score3; break;
-                case 4: score = BigData.Score4; break;
-                case 5: score = BigData.Score5; break;
-                case 6: score = BigData.Score6; break;
-            }
             LoadImage();
             LoadTypingGame();
         }
@@ -82,7 +75,7 @@ namespace WinFormsApp1
 
                 // Calculates where to place the image based on the picture size to be in the middle
                 int centerX = ((this.ClientSize.Width - treePictureBox.Width) / 2) + 100;
-                int bottomY = (this.ClientSize.Height - treePictureBox.Height) - 5;
+                int bottomY = (this.ClientSize.Height - treePictureBox.Height) - 10;
 
                 // Changes the location of the image
                 treePictureBox.Location = new Point(centerX, bottomY);
@@ -128,8 +121,11 @@ namespace WinFormsApp1
 
         private void GenerateRandomLetter()
         {
-            currentLetter = letters[random.Next(letters.Length)];
+            currentLetter = nextLetter; // Set the current letter to the previously generated next letter
+            nextLetter = letters[random.Next(letters.Length)]; // Generate a new next letter
+
             UpdatePictureBox();
+            UpdateNextLetterPictureBox(); // Update the next letter PictureBox
             timeLeft = 1000; // Reset time left for each letter
             timeLabel.Text = $"Time Left: {timeLeft}ms";
             timer.Start();
@@ -161,6 +157,23 @@ namespace WinFormsApp1
                         pictureBox1.Image = (Bitmap)bitmap.Clone();
                     }
                 }
+            }
+        }
+
+        private void UpdateNextLetterPictureBox()
+        {
+            using (Bitmap bitmap = new Bitmap(100, 100))
+            {
+                using (Graphics g = Graphics.FromImage(bitmap))
+                {
+                    g.Clear(Color.LightGray);
+                    using (Font font = new Font("Arial", 48))
+                    {
+                        g.DrawString(nextLetter.ToString(), font, Brushes.Black, new PointF(10, 10));
+                    }
+                }
+                nextLetterPictureBox.Image?.Dispose();
+                nextLetterPictureBox.Image = (Bitmap)bitmap.Clone();
             }
         }
 
@@ -215,15 +228,15 @@ namespace WinFormsApp1
         {
             int newTreeState = currentTreeState;
 
-            if (score < 8 * currentTree)
+            if (score < 4)
             {
                 newTreeState = 1;
             }
-            else if (score >= 8 * currentTree && score < 18 * currentTree)
+            else if (score >= 4 && score < 9)
             {
                 newTreeState = 2;
             }
-            else if (score >= 18 * currentTree)
+            else if (score >= 9)
             {
                 newTreeState = 3;
             }
@@ -255,7 +268,7 @@ namespace WinFormsApp1
                 Name = "scoreLabel",
                 Size = new System.Drawing.Size(47, 13),
                 TabIndex = 1,
-                Text = $"Score: {score}",
+                Text = "Score: 0",
                 Font = new Font("Arial", 24)
             };
 
@@ -281,15 +294,21 @@ namespace WinFormsApp1
                 Font = new Font("Arial", 12)
             };
 
+            nextLetterPictureBox = new PictureBox
+            {
+                Location = new System.Drawing.Point(140, 10), // Position it in the top left corner
+                Name = "nextLetterPictureBox",
+                Size = new System.Drawing.Size(100, 100),
+                TabIndex = 4,
+                TabStop = false,
+                BorderStyle = BorderStyle.FixedSingle // Add a border to make it look like a box
+            };
+
             this.Controls.Add(pictureBox1);
             this.Controls.Add(scoreLabel);
             this.Controls.Add(timeLabel);
             this.Controls.Add(pauseLabel);
-        }
-
-        private void Level_Load(object sender, EventArgs e)
-        {
-
+            this.Controls.Add(nextLetterPictureBox); // Add the next letter PictureBox
         }
     }
 }
