@@ -18,7 +18,7 @@ namespace WinFormsApp1
         private char nextLetter; // New field to store the next letter
         private int score;
         private readonly Random random = new Random();
-        private readonly char[] letters = { 'a', 's', 'd', 'f', 'j', 'k', 'l', ';' };
+        private readonly char[] letters = "abcdfghijklmnopqrstuvwxyz".ToCharArray();
         private System.Windows.Forms.Timer timer;
         private int timeLeft;
         private PictureBox pictureBox1;
@@ -133,7 +133,7 @@ namespace WinFormsApp1
 
         private void UpdatePictureBox()
         {
-            string resourceName = $"TypingGame.Resources.{GetImageFileName(currentLetter)}";
+            string resourceName = $"WinFormsApp1.Resources.{GetImageFileName(currentLetter)}";
             using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
             {
                 if (stream != null)
@@ -179,7 +179,7 @@ namespace WinFormsApp1
 
         private string GetImageFileName(char letter)
         {
-            return letter == ';' ? "semicolon.png" : $"{letter}.png";
+            return $"{letter}.png";
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
