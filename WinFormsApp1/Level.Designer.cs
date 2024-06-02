@@ -38,7 +38,6 @@
             ClientSize = new Size(1264, 981);
             Name = "Level";
             Text = "Level";
-            Load += Level_Load;
             ResumeLayout(false);
         }
 
