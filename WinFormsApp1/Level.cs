@@ -224,19 +224,44 @@ namespace WinFormsApp1
             GenerateRandomLetter();
         }
 
+        private Button nextTreeButton; // Declare the button at the class level
+
+        private void BackButton()
+        {
+            // Existing component initializations...
+
+            nextTreeButton = new Button
+            {
+                Text = "Next Tree",
+                Location = new Point(12, 225), // Position below the pause label
+                Size = new Size(100, 50),
+                Font = new Font("Arial", 12)
+            };
+            nextTreeButton.Click += new EventHandler(NextTreeButton_Click); // Event handler for the button click
+            this.Controls.Add(nextTreeButton);
+        }
+
+        private void NextTreeButton_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // Hide the current form
+            var gameForm = new Game(); // Assume Game is another form in your project
+            gameForm.Closed += (s, args) => this.Close(); // Close the Level form when Game form is closed
+            gameForm.Show(); // Show the Game form
+        }
+
         private void UpdateTreeState()
         {
             int newTreeState = currentTreeState;
 
-            if (score < 4)
+            if (score < 10)
             {
                 newTreeState = 1;
             }
-            else if (score >= 4 && score < 9)
+            else if (score >= 10 && score < 30)
             {
                 newTreeState = 2;
             }
-            else if (score >= 9)
+            else if (score >= 30)
             {
                 newTreeState = 3;
             }
@@ -244,11 +269,14 @@ namespace WinFormsApp1
             if (newTreeState != currentTreeState)
             {
                 currentTreeState = newTreeState;
-                LoadImage();
+                LoadImage(); // Reload the image for the new tree state
                 InitializeComponent();
                 InitializeTypingGameComponents();
+                BackButton();
             }
         }
+
+
 
         private void InitializeTypingGameComponents()
         {
