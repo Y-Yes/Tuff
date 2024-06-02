@@ -27,6 +27,8 @@ namespace WinFormsApp1
         private Label timeLabel;
         private Label pauseLabel;
         private bool gamePaused = false;
+        private Label totalTimerLabel;
+        private int totalTimeLeft = 60000;
 
         public Level(int tree)
         {
@@ -97,13 +99,24 @@ namespace WinFormsApp1
         private void InitializeTimer()
         {
             timer = new System.Windows.Forms.Timer();
-            timer.Interval = 100; // 100 milliseconds
+            timer.Interval = 100; // Fire the event every 100 milliseconds
             timer.Tick += new EventHandler(Timer_Tick);
-            timeLeft = 1000; // 1000 milliseconds (1 second)
+            timer.Start(); // Start the timer when the game loads
+            timeLeft = 1000; // 1000 milliseconds (1 second) for each letter
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+            if (totalTimeLeft <= 0)
+            {
+                timer.Stop();
+                MessageBox.Show("Game Over! Your final score is: " + score);
+                return; // Stop further processing once the game is over
+            }
+
+            totalTimeLeft -= timer.Interval; // Reduce the total time left by the timer interval
+            totalTimerLabel.Text = "Total Time Left: " + (totalTimeLeft / 1000) + "s"; // Update the label to show remaining seconds
+
             if (timeLeft > 0)
             {
                 timeLeft -= 100;
@@ -116,6 +129,7 @@ namespace WinFormsApp1
                 UpdateTreeState();
                 scoreLabel.Text = $"Score: {score}";
                 GenerateRandomLetter();
+                timer.Start(); // Restart the timer for the next letter after updating
             }
         }
 
@@ -280,6 +294,17 @@ namespace WinFormsApp1
 
         private void InitializeTypingGameComponents()
         {
+            totalTimerLabel = new Label
+            {
+                AutoSize = true,
+                Location = new Point(12, 210),
+                Name = "totalTimerLabel",
+                Size = new Size(200, 13),
+                TabIndex = 4,
+                Text = "Total Time Left: 60s",
+                Font = new Font("Arial", 12)
+            };
+
             pictureBox1 = new PictureBox
             {
                 Location = new System.Drawing.Point(12, 12),
@@ -332,6 +357,7 @@ namespace WinFormsApp1
                 BorderStyle = BorderStyle.FixedSingle // Add a border to make it look like a box
             };
 
+            this.Controls.Add(totalTimerLabel);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(scoreLabel);
             this.Controls.Add(timeLabel);
