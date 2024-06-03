@@ -61,6 +61,14 @@ namespace WinFormsApp1
             label12.Text = $"Score: {BigData.Score6}";
         }
 
+        private void Game_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
