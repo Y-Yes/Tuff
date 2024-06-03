@@ -257,8 +257,10 @@ namespace WinFormsApp1
 
         private void NextTreeButton_Click(object sender, EventArgs e)
         {
+           
             this.Hide(); // Hide the current form
             var gameForm = new Game(); // Assume Game is another form in your project
+            totalTimeLeft = 0;
             gameForm.Closed += (s, args) => this.Close(); // Close the Level form when Game form is closed
             gameForm.Show(); // Show the Game form
         }
@@ -267,15 +269,15 @@ namespace WinFormsApp1
         {
             int newTreeState = currentTreeState;
 
-            if (score < 10)
+            if (score < 10+currentTree*5)
             {
                 newTreeState = 1;
             }
-            else if (score >= 10 && score < 30)
+            else if (score >= 10 + currentTree*5 && score < 25 + currentTree*5)
             {
                 newTreeState = 2;
             }
-            else if (score >= 30)
+            else if (score >= 25 + currentTree * 5)
             {
                 newTreeState = 3;
             }
